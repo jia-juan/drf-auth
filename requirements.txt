@@ -21,6 +21,7 @@ inflection==0.5.1
 isort==5.6.4
 itypes==1.2.0
 Jinja2==2.11.2
+jwt==1.1.0
 lazy-object-proxy==1.4.3
 MarkupSafe==1.1.1
 mccabe==0.6.1
@@ -28,7 +29,9 @@ numpy==1.19.4
 oauthlib==3.1.0
 packaging==20.7
 pandas==1.1.4
+passlib==1.7.4
 pycparser==2.20
+pydantic==1.7.3
 PyJWT==1.7.1
 pylint==2.6.0
 pyparsing==2.4.7

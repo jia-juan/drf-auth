@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     # 'djoser',
     # -- apps --
     'app0',
-    'rbac',
+    # 'rbac',
+    'sysauth',
 ]
 
 MIDDLEWARE = [
@@ -91,9 +92,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-# Custom User Model
-AUTH_USER_MODEL = 'rbac.SysUser'
 
 
 # Password validation
@@ -140,6 +138,9 @@ JWT_AUTH = {
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
 }
 
+# Custom User Model
+AUTH_USER_MODEL = 'sysauth.SysUser'
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -151,7 +152,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -159,6 +160,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = "/static_root/"
+# STATIC_ROOT = "/static_root/"
 
 DJANGO_HOST = 'http://localhost:8000'

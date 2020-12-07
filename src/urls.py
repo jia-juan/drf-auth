@@ -27,18 +27,21 @@ from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework_jwt.views import refresh_jwt_token
 from rest_framework_jwt.views import verify_jwt_token
 
-from rbac.views import LoginView
-from rbac.views import TokenRefreshView
-from rbac.views import LogoutView
+# from rbac.views import LoginView
+# from rbac.views import TokenRefreshView
+# from rbac.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     # jwt/rbac
-    path('user/login/', LoginView.as_view()),
-    path('user/token-refresh/', TokenRefreshView.as_view()),
-    path('user/logout/', LogoutView.as_view()),
-    path('api-token-verify/', verify_jwt_token),  # 驗證token是否有效
+    # path('user/login/', LoginView.as_view()),
+    # path('user/token-refresh/', TokenRefreshView.as_view()),
+    # path('user/logout/', LogoutView.as_view()),
+    # path('api-token-verify/', verify_jwt_token),  # 驗證token是否有效
+
+    # sysauth
+    path('', include('sysauth.urls')),
 
     # app0
     path('', include('app0.urls')),

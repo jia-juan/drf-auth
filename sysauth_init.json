@@ -1,0 +1,60 @@
+[
+  {
+    "model": "sysauth.role",
+    "pk": 1,
+    "fields": {
+      "role_name": "admin"
+    }
+  },
+  {
+    "model": "sysauth.role",
+    "pk": 2,
+    "fields": {
+      "role_name": "user"
+    }
+  },
+  {
+    "model": "sysauth.operation",
+    "pk": 1,
+    "fields": {
+      "operation": "create"
+    }
+  },
+  {
+    "model": "sysauth.operation",
+    "pk": 2,
+    "fields": {
+      "operation": "update"
+    }
+  },
+  {
+    "model": "sysauth.operation",
+    "pk": 3,
+    "fields": {
+      "operation": "delete"
+    }
+  },
+  {
+    "model": "sysauth.operation",
+    "pk": 4,
+    "fields": {
+      "operation": "read"
+    }
+  },
+  {
+    "model": "sysauth.resource",
+    "pk": 1,
+    "fields": {
+      "resource_class": "User",
+      "name": "人員"
+    }
+  },
+  {
+    "model": "sysauth.resource",
+    "pk": 2,
+    "fields": {
+      "resource_class": "Role",
+      "name": "角色"
+    }
+  }
+]

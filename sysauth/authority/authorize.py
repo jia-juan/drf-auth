@@ -12,13 +12,13 @@ tz = pytz.timezone(settings.TIME_ZONE)
 
 class Authorize:
     @staticmethod
-    def authorize(user: SysUser, device: str = "pc", auto_delete=True) -> str:
+    def authorize(user: SysUser, device: str = 'pc', auto_delete=True) -> str:
         """
         :param user:
         :param device:
         :param auto_delete: 過期是否刪除，默認為 True
         :return:
-        TODO: redis部分暫時
+        TODO: redis部分暫時用sqlite儲存
         """
         exp = dt.now(tz) + timedelta(seconds=JWT_LIFE_SPAN)
         token = Token.encode(user, exp=exp, device=device)

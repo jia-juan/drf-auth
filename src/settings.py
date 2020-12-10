@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     # 'rbac',
     # 'sysauth',
     'accounts',
+    # -- custom permission --
+    'sys_rest_permissions',
 
 ]
 

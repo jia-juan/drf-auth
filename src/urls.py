@@ -39,6 +39,8 @@ urlpatterns = [
     # path('user/token-refresh/', TokenRefreshView.as_view()),
     # path('user/logout/', LogoutView.as_view()),
     # path('api-token-verify/', verify_jwt_token),  # 驗證token是否有效
+    # accounts
+    path('accounts/', include('accounts.urls')),
 
     # sysauth
     path('', include('sysauth.urls')),

@@ -1,0 +1,44 @@
+[
+  {
+    "model": "accounts.role",
+    "pk": 1,
+    "fields": {
+      "name": "admin"
+    }
+  },
+  {
+    "model": "accounts.role",
+    "pk": 2,
+    "fields": {
+      "name": "user"
+    }
+  },
+  {
+    "model": "accounts.operation",
+    "pk": 1,
+    "fields": {
+      "operation": "create"
+    }
+  },
+  {
+    "model": "accounts.operation",
+    "pk": 2,
+    "fields": {
+      "operation": "update"
+    }
+  },
+  {
+    "model": "accounts.operation",
+    "pk": 3,
+    "fields": {
+      "operation": "delete"
+    }
+  },
+  {
+    "model": "accounts.operation",
+    "pk": 4,
+    "fields": {
+      "operation": "read"
+    }
+  }
+]

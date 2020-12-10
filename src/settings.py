@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     # -- apps --
     'app0',
     # 'rbac',
-    'sysauth',
+    # 'sysauth',
+    'accounts',
+
 ]
 
 MIDDLEWARE = [
@@ -112,6 +114,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CORS_ALLOW_CREDENTIALS = True  # to accept cookies via ajax request
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:8000',  # the domain for front-end app(you can add more than 1)
+
+]
+
 # drf permission/authencation settings
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
@@ -119,12 +127,14 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticated',  # 原生
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
+        # Reference: https://dev.to/a_atalla/django-rest-framework-custom-jwt-authentication-5n5
+        'accounts.authentication.SafeJWTAuthentication',
+        # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.BasicAuthentication',
     ),
 }
 
@@ -139,7 +149,9 @@ JWT_AUTH = {
 }
 
 # Custom User Model
-AUTH_USER_MODEL = 'sysauth.SysUser'
+AUTH_USER_MODEL = 'accounts.SysUser'
+
+REFRESH_TOKEN_SECRET = 'systex'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
